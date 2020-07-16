@@ -39,11 +39,11 @@
 
 - user:
 
-        useradd -m -s /bin/bash ceph-deploy
-        passwd ceph-deploy
-        echo "ceph-deploy ALL = (root) NOPASSWD:ALL" | tee /etc/sudoers.d/ceph-deploy
-        chmod 0440 /etc/sudoers.d/ceph-deploy
-        su - ceph-deploy
+        - useradd -m -s /bin/bash ceph-deploy
+        - passwd ceph-deploy
+        - echo "ceph-deploy ALL = (root) NOPASSWD:ALL" | tee /etc/sudoers.d/ceph-deploy
+        - chmod 0440 /etc/sudoers.d/ceph-deploy
+        - su - ceph-deploy
 
 
 - node 1:
