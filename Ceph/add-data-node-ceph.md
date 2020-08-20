@@ -14,7 +14,11 @@
 
 - Zap disk: `for i in {a..b};do ceph-volume lvm zap /dev/sd$i --destroy;done`
 
-- Prepare disk: `for i in {a..b};do ceph-volume lvm prepare --data /dev/sd$i ;done`
+- Prepare disk:
+    
+    - HDD: `for i in {a..b};do ceph-volume lvm prepare --data /dev/sd$i ;done`
+
+    - SSD: `for i in {a..b}; do ceph-volume lvm prepare --crush-device-class ssd --data /dev/sd$i; done`
 
 - Add osd vào crush rule (chỉnh lại tham số weight, root, host), xem osd nào đã được add rồi thì k add lại nữa, sử dụng awk để bắt osd, check lại trước khi chạy for: 
     
